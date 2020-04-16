@@ -19,9 +19,9 @@ gamma_steps_per_mm                           3,023.622047244             # Steps
 
 # Planner module configuration : Look-ahead and acceleration configuration
 # See http://smoothieware.org/motion-control
-acceleration                                 200             # Acceleration in mm/second/second.
+acceleration                                 400             # Acceleration in mm/second/second.
 z_acceleration                               20              # Acceleration for Z only moves in mm/s^2, 0 uses acceleration which is the default. DO NOT SET ON A DELTA
-junction_deviation                           0.05             # See http://smoothieware.org/motion-control#junction-deviation
+junction_deviation                           0.1             # See http://smoothieware.org/motion-control#junction-deviation
 #z_junction_deviation                        0.0              # For Z only moves, -1 uses junction_deviation, zero disables junction_deviation on z moves DO NOT SET ON A DELTA
 
 # Cartesian axis speed limits
@@ -68,7 +68,7 @@ extruder.hotend.en_pin                          0.21          # Pin for extruder
 #extruder.hotend.z_offset                        0            # Z offset from origin in mm
 
 # Firmware retract settings when using G10/G11, these are the defaults if not defined, must be defined for each extruder if not using the defaults
-#extruder.hotend.retract_length                  4.6          # Retract length in mm
+#extruder.hotend.retract_length                  1.5          # Retract length in mm
 #extruder.hotend.retract_feedrate                45           # Retract feedrate in mm/sec
 #extruder.hotend.retract_recover_length          0.01         # Additional length for recover
 #extruder.hotend.retract_recover_feedrate        8            # Recover feedrate in mm/sec (should be less than retract feedrate)
@@ -154,7 +154,7 @@ temperature_control.hotend.designator        T                # Designator lette
 
 #temperature_control.hotend2.max_pwm          64              # Max pwm, 64 is a good value if driving a 12v resistor with 24v.
 
-temperature_control.bed.enable               false             # Whether to activate this ( "hotend" ) module at all.
+temperature_control.bed.enable               true             # Whether to activate this ( "hotend" ) module at all.
 temperature_control.bed.thermistor_pin       0.24             # Pin for the thermistor to read
 temperature_control.bed.heater_pin           2.5              # Pin that controls the heater
 temperature_control.bed.thermistor           Honeywell100K    # See http://smoothieware.org/temperaturecontrol#thermistor
@@ -165,7 +165,7 @@ temperature_control.bed.designator           B                # Designator lette
 
 # Bang-bang ( simplified ) control
 # See http://smoothieware.org/temperaturecontrol#bang-bang
-#temperature_control.bed.bang_bang           false            # Set to true to use bang bang control rather than PID
+#temperature_control.bed.bang_bang           true            # Set to true to use bang bang control rather than PID
 #temperature_control.bed.hysteresis          2.0              # Set to the temperature in degrees C to use as hysteresis
 
 ## Switch modules
